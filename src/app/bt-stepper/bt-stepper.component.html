@@ -1,0 +1,7 @@
+<section class="stepper-container">
+  <ol class="stepper">
+    <li *ngFor="let step of steps" [class]="step.status"> 
+      {{step.label}} 
+    </li>
+  </ol>
+</section>

@@ -1,0 +1,79 @@
+.stepper-container {
+ width:100%;
+ margin-top: 100px;
+}
+.stepper {
+  counter-reset: step; 
+}
+.stepper ol {
+  position: relative; 
+}
+.stepper li {
+  width: 100px; 
+  list-style-type: none; 
+  float: left; 
+  position:relative; 
+  text-align: center;
+  font-weight: 600;
+}
+.stepper li:before {
+/* CSS for creating steper block before the li item*/
+ content:counter(step); 
+ counter-increment: step; 
+ height:30px;
+ width:30px; 
+ line-height: 30px; 
+ border: 2px solid #ddd; 
+ display:block; 
+ text-align: center;
+ margin: 0 auto 10px auto; 
+ border-radius: 50%; 
+ background-color: white; 
+}
+.stepper li:after {
+/* CSS for creating horizontal line*/
+ content:'';
+ position: absolute; 
+ width:100%;
+ height:2px;
+ background-color: rgb(201, 18, 18);
+ top: 15px; 
+ left: -50%; 
+ z-index: -1; 
+}
+
+.stepper li:first-child:after {
+ content:none;
+}
+
+.stepper li.completed:before {
+  background-color: blue;
+}
+
+.stepper li.completed  + li:after{
+  background-color: red;
+}
+
+.stepper li.in-progress  + li:before{
+  background-color: lightblue;
+  
+}
+
+.stepper li.in-progress  + li:after{
+  background-color: lightblue;;
+  opacity: .5
+}
+
+
+.stepper li.incomplete  + li:before{
+  background-color: lightgray;
+  
+}
+
+.stepper li.incomplete  + li:after{
+  background-color: lightgray;;
+  opacity: .5
+}
+
+
+
